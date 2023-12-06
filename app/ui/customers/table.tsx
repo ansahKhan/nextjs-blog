@@ -1,21 +1,13 @@
 import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
-import {
-  CustomersTableType,
-  FormattedCustomersTable,
-} from '@/app/lib/definitions';
+import { CustomersTableType,FormattedCustomersTable,} from '@/app/lib/definitions';
 
-export default async function CustomersTable({
-  customers,
-}: {
-  customers: FormattedCustomersTable[];
-}) {
+export default async function CustomersTable({ customers, } : { customers: FormattedCustomersTable[];}) 
+ {
   return (
     <div className="w-full">
-      <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
-        Customers
-      </h1>
+      <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}> Customers </h1>
       <Search placeholder="Search customers..." />
       <div className="mt-6 flow-root">
         <div className="overflow-x-auto">
@@ -65,21 +57,11 @@ export default async function CustomersTable({
               <table className="hidden min-w-full rounded-md text-gray-900 md:table">
                 <thead className="rounded-md bg-gray-50 text-left text-sm font-normal">
                   <tr>
-                    <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                      Name
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Email
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Total Invoices
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Total Pending
-                    </th>
-                    <th scope="col" className="px-4 py-5 font-medium">
-                      Total Paid
-                    </th>
+                    <th scope="col" className="px-4 py-5 font-medium sm:pl-6"> Name </th>
+                    <th scope="col" className="px-3 py-5 font-medium"> Email </th>
+                    <th scope="col" className="px-3 py-5 font-medium"> Total Invoices </th>
+                    <th scope="col" className="px-3 py-5 font-medium"> Total Pending </th>
+                    <th scope="col" className="px-4 py-5 font-medium"> Total Paid </th>
                   </tr>
                 </thead>
 
@@ -98,15 +80,9 @@ export default async function CustomersTable({
                           <p>{customer.name}</p>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {customer.email}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {customer.total_invoices}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {customer.total_pending}
-                      </td>
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm"> {customer.email} </td>
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm"> {customer.total_invoices} </td>
+                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm"> {customer.total_pending} </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         {customer.total_paid}
                       </td>
